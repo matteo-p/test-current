@@ -1,0 +1,15 @@
+<label>Server Name</label>
+<input type="text" class="form-control" [(ngModel)]="serverName">
+<p>{{serverName}} </p>
+<button class="btn btn-primary" 
+[disabled]="!allowNew"
+(click)="createS()"
+>add server</button>
+<p>{{allowNew}} </p>
+<app-server *ngFor="let server of servers"></app-server>
+
+
+<input type="text" class="form-control" [(ngModel)]="username" [ngStyle]="{backgroundColor: theColor()}" >
+<p *ngIf="username">User: {{username}} </p>
+<button class="btn btn-primary" [disabled]="!username" (click)="resetName()" >reset name</button>
+
