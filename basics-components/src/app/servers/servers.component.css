@@ -1,3 +1,11 @@
 input{
     transition: 0.4s all;
 }
+
+.show{
+    display: block
+}
+
+.noshow{
+    display: none;
+}

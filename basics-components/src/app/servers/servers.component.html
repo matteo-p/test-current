@@ -6,10 +6,15 @@
 (click)="createS()"
 >add server</button>
 <p>{{allowNew}} </p>
-<app-server *ngFor="let server of servers"></app-server>
+<app-server *ngFor="let server1 of servers"></app-server>
 
 
 <input type="text" class="form-control" [(ngModel)]="username" [ngStyle]="{backgroundColor: theColor()}" >
 <p *ngIf="username">User: {{username}} </p>
 <button class="btn btn-primary" [disabled]="!username" (click)="resetName()" >reset name</button>
+<br><hr>
+<button class="btn btn-primary" (click)="details()">Show Details</button>
+<p class="noshow">{{showDetails}} </p>
+<p [ngClass]="[showDetails === true ? 'show' : 'noshow' , clickNumber > 5 ? 'blue' : '' ]"  >details {{clickNumber}} </p>
+<p *ngFor="let logItem of clickLog" [ngClass]="[logItem > 5 ? 'blue' : '']">{{ logItem }}</p> 
 

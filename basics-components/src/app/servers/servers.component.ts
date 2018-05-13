@@ -13,6 +13,9 @@ allowNew = false;
 username ='dummy';
 serverID = '0' ;
 servers = ['sName1','sName2'];
+showDetails = false;
+clickNumber = 0;
+clickLog =[];
 
   constructor() { 
 
@@ -27,6 +30,17 @@ servers = ['sName1','sName2'];
   createS() {
     this.allowNew=false;
     this.servers.push(this.serverID);
+  };
+
+  details() {
+    if (this.showDetails === true) {
+      this.showDetails = false;
+    }
+    else {
+      this.showDetails = true;
+    };
+    this.clickNumber++;
+    this.clickLog.push(this.clickNumber);
   };
   
   resetName(){
