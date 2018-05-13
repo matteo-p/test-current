@@ -1,4 +1,4 @@
 
 <p>The Server Component</p>
 
-<p>server {{serverID}} is {{getStatus() }} </p>
+<p [ngClass]="{'online': serverStatus === 'online'}">server {{serverID}} is {{getStatus() }} </p>
