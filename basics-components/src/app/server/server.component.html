@@ -1,4 +1,7 @@
+<div class="card" [ngClass]="{'online': serverStatus === 'online'}">
+    <div class="card-body" >
+        <p>The Server Component</p>
+        <p >server {{serverID}} is {{getStatus() }} </p>
+    </div>
+</div>
 
-<p>The Server Component</p>
-
-<p [ngClass]="{'online': serverStatus === 'online'}">server {{serverID}} is {{getStatus() }} </p>
