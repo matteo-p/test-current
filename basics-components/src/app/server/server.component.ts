@@ -8,9 +8,9 @@ import { Component } from '@angular/core';
 export class ServerComponent {
 rndStatus: number = Math.random();
 
-serverStatus= this.rndStatus < 0.5 ? 'offline': 'online';
-serverID: number =Math.trunc(this.rndStatus*10);
-getStatus(){
+serverStatus= this.rndStatus < 0.5 ? 'offline' : 'online';
+serverID: number = Math.trunc(this.rndStatus * 10);
+getStatus() {
   return this.serverStatus;
 }
 
