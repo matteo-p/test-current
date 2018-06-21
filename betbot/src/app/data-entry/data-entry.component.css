@@ -1,0 +1,28 @@
+.cont-1x2 {
+    margin-top: 30px;
+}
+
+.input-group > .form-control:not(:last-child) {
+    margin-right: 7px;
+}
+
+.visual-meter{
+    width: 400px;
+    margin: 30px auto;
+}
+
+.graph{
+    border: 1px solid #555;
+    width: 300px;
+    height: 300px;
+    margin: auto;
+}
+
+.center-point {
+    width: 10px;
+    height: 10px;
+    background-color: #aaa;
+    bottom: 160px;
+    position: absolute;
+    left: calc(50% - 5px);
+}

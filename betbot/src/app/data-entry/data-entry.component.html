@@ -1,4 +1,4 @@
-<div class="card" style="width: 18rem;">
+<div class="card cont-1x2" >
   <div class="card-body">
     <h5 class="card-title"> 1 X 2</h5>
     <label for="basic-url">Pronostico generico</label>
@@ -6,17 +6,28 @@
   <div class="input-group-prepend">
     <span class="input-group-text" id="basic-addon3">1</span>
   </div>
-  <input type="text" class="form-control" id="basic-1" aria-describedby="basic-addon3">
+  <input type="number" step="any" min="0" class="form-control" id="basic-1" aria-describedby="basic-addon3" [(ngModel)]="uno.val">
   <div class="input-group-prepend">
     <span class="input-group-text" id="basic-addon3">X</span>
   </div>
-  <input type="text" class="form-control" id="basic-x" aria-describedby="basic-addon3">
+  <input type="number" step="any" min="0" class="form-control" id="basic-x" aria-describedby="basic-addon3" [(ngModel)]="ics.val">
   <div class="input-group-prepend">
     <span class="input-group-text" id="basic-addon3">2</span>
   </div>
-  <input type="text" class="form-control" id="basic-2" aria-describedby="basic-addon3">
+  <input type="number" step="any" min="0" class="form-control" id="basic-2" aria-describedby="basic-addon3" [(ngModel)]="due.val">
 </div>
    
-    <button type="button" class="btn btn-primary">Primary</button>
+    <button type="button" class="btn btn-primary" (click)="process()">Calc</button>
+    <p>Actual X value : {{expected.x}}</p>
+    <p>Actual Y value : {{expected.y}}</p>
+  </div>
+</div>
+<div class="card visual-meter">
+  <div class="card-body">
+    <h5 class="card-title"> Graph</h5>
+    <div class="graph">
+      <div class="center-point" [ngStyle]="{bottom: theBottom(), left: theLeft()}"></div>
+    </div>
+    
   </div>
 </div>
