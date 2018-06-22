@@ -1,2 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
-@import "~bootstrap/dist/css/bootstrap.css"
+@import "~bootstrap/dist/css/bootstrap.css";
+
+.hide{
+    display: none;
+}
+
+body{
+    background: linear-gradient(90deg,#0f3e78 0,#0e6bb5 50%,#0f3e78);
+}

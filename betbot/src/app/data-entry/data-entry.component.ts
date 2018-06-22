@@ -31,6 +31,15 @@ export class DataEntryComponent implements OnInit {
     x : 0,
     y : 0
   };
+  uo = {
+    und : {
+      r05 : 0
+    },
+    over : {
+      r05 : 0
+    }
+  };
+
 
 
   constructor() { }
@@ -59,16 +68,16 @@ export class DataEntryComponent implements OnInit {
     this.expected.x = this.uno.x + this.ics.x + this.due.x;
     this.expected.y = this.uno.y + this.ics.y + this.due.y;
     this.expected.x = Math.round((this.expected.x) * 100) / 100;
-    this.expected.y = Math.round((this.expected.x) * 100) / 100;
+    this.expected.y = Math.round((this.expected.y) * 100) / 100;
   }
 
   theBottom() {
-    this.theY = (this.expected.y * 100) + 160;
+    this.theY = (this.expected.y * 100) + 146;
     return this.theY + 'px';
   }
 
   theLeft() {
-    this.theX = (this.expected.x * 100) + 194;
+    this.theX = (this.expected.x * 100) + 146;
     return this.theX + 'px';
   }
 }

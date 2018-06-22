@@ -1,9 +1,18 @@
 .cont-1x2 {
     margin-top: 30px;
 }
+.card.cont-1x2 {
+    background-color: #eef;
+}
 
 .input-group > .form-control:not(:last-child) {
     margin-right: 7px;
+}
+
+span#basic-addon3 {
+    background-color: #f55;
+    color: #eee;
+    font-weight: 500;
 }
 
 .visual-meter{
@@ -12,17 +21,95 @@
 }
 
 .graph{
-    border: 1px solid #555;
+    border: 3px solid #555;
     width: 300px;
     height: 300px;
     margin: auto;
+    position: relative;
+    box-sizing: content-box;
 }
 
 .center-point {
     width: 10px;
     height: 10px;
-    background-color: #aaa;
+    background-color: #f55;
     bottom: 160px;
     position: absolute;
     left: calc(50% - 5px);
+    border-radius: 10px 10px;
+    transition: all 1s ease;
+}
+
+.label_x::before {
+    content: 'X';
+    color: #555;
+    font-weight: bold;
+}
+
+.label_x {
+    position: absolute;
+    left: 145px;
+}
+
+.label_1::before {
+    content: '1';
+    color: #555;
+    font-weight: bold;
+}
+
+.label_1 {
+    position: absolute;
+    left: 4px;
+    bottom: 2px;
+}
+
+.label_2::before {
+    content: '2';
+    color: #555;
+    font-weight: bold;
+}
+
+.label_2 {
+    position: absolute;
+    right: 4px;
+    bottom: 2px;
+}
+
+.axis1{
+    width: 170px;
+    height: 3px;
+    background-color: #000;
+    bottom: 150px;
+    position: absolute;
+    left: 152px;
+    -webkit-transform: rotate(-30deg);
+    transform: rotate(-30deg);
+    -webkit-transform-origin: 0% 0%;
+    transform-origin: 0% 0%;
+}
+
+.axis2{
+    width: 153px;
+    height: 3px;
+    background-color: #000;
+    bottom: 150px;
+    position: absolute;
+    left: 153px;
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+    -webkit-transform-origin: 0% 0%;
+    transform-origin: 0% 0%;
+}
+
+.axis3{
+    width: 175px;
+    height: 3px;
+    background-color: #000;
+    bottom: 148px;
+    position: absolute;
+    left: 150px;
+    -webkit-transform: rotate(-120deg);
+    transform: rotate(-150deg);
+    -webkit-transform-origin: 0% 0%;
+    transform-origin: 0% 0%;
 }
