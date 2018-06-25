@@ -1,0 +1,18 @@
+<div class="container main">
+  <div class="container-fluid">
+    <div class="row">
+      <p class="title">World cup 2018</p>
+    <p class="today">Live scores - {{theDate}}</p>
+    </div>
+    <div class="row">
+      <div class="col-sm-6" *ngFor="let data of matchesData; let i = index">
+        <p class="matches">{{matchesData[i].home_team.code}}: {{matchesData[i].home_team.goals}}   VS {{matchesData[i].away_team.code}} : {{matchesData[i].away_team.goals}}</p>
+        <div class="row">
+          <div class="col-6">team  A</div>
+          <div class="col-6">team  B</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

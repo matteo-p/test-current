@@ -1,0 +1,30 @@
+.container.main {
+    margin-top: 20px;
+    background: url('../../assets/WorldCupBackground.jpg');
+    font-family: dusha;
+    border-radius: 10px 10px;
+    color: #E5C685;
+}
+
+p.title {
+    width:  100%;
+    text-align:  center;
+    font-size: 4rem;
+}
+
+p.matches {
+    text-align: center;
+    font-size: 22px;
+    color: white;
+    border: 2px solid #E5C685;
+    width: 83%;
+    margin: 10px auto;
+    border-radius: 10px 10px;
+    background-color: rgba(211, 2, 8,0.9);
+}
+
+p.today {
+    text-align:  center;
+    width: 100%;
+    font-size: 20px;
+}
