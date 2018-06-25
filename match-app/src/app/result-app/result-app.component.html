@@ -6,12 +6,43 @@
     </div>
     <div class="row">
       <div class="col-sm-6" *ngFor="let data of matchesData; let i = index">
-        <p class="matches">{{matchesData[i].home_team.code}}: {{matchesData[i].home_team.goals}}   VS {{matchesData[i].away_team.code}} : {{matchesData[i].away_team.goals}}</p>
-        <div class="row">
-          <div class="col-6">team  A</div>
-          <div class="col-6">team  B</div>
+        <p class="matches">{{data.home_team.country}}: {{data.home_team.goals}}   VS {{data.away_team.country}} : {{data.away_team.goals}} <br><span class="time">Time: {{data.time}}</span> </p>
+        <div class="col-1 float-left"></div>
+        <div class="col-5 float-left">
+          <div class="row events" *ngFor="let event of data.home_team_events">
+            <div class="event-icon" [ngClass]="{
+              'ball':event.type_of_event === 'goal',
+              'yellow-card':event.type_of_event === 'yellow-card',
+              'red-card':event.type_of_event === 'red-card',
+              'double-yellow-card':event.type_of_event === 'yellow-card-second',
+              'player-in':event.type_of_event === 'substitution-in',
+              'player-out':event.type_of_event === 'substitution-out',
+              'penalty':event.type_of_event === 'goal-penalty',
+              'own-goal':event.type_of_event === 'goal-own'
+            }"></div>
+            <div class="event-player">{{event.player}} </div>
+            <div class="event-min">{{event.time}}</div>
+          </div>
         </div>
 
+        <div class="col-5 float-left">
+          <div class="row events" *ngFor="let event of data.away_team_events">
+            <div class="event-icon" [ngClass]="{
+              'ball':event.type_of_event === 'goal',
+              'yellow-card':event.type_of_event === 'yellow-card',
+              'red-card':event.type_of_event === 'red-card',
+              'double-yellow-card':event.type_of_event === 'yellow-card-second',
+              'player-in':event.type_of_event === 'substitution-in',
+              'player-out':event.type_of_event === 'substitution-out',
+              'penalty':event.type_of_event === 'goal-penalty',
+              'own-goal':event.type_of_event === 'goal-own'
+              
+            }"></div>
+            <div class="event-player">{{event.player}} </div>
+            <div class="event-min">{{event.time}}</div>
+          </div>
+        </div>
+        <div class="col-1 float-left"></div>
       </div>
     </div>
   </div>

@@ -5,3 +5,13 @@
     font-family: dusha;
     src: url('assets/Dusha_-_FIFA_World_Cup_2018.ttf');
 }
+
+.background{
+    background: url(/assets/WorldCupBackground.jpg);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: fixed;
+    z-index: -1;
+}

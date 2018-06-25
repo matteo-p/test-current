@@ -1,6 +1,6 @@
 .container.main {
     margin-top: 20px;
-    background: url('../../assets/WorldCupBackground.jpg');
+
     font-family: dusha;
     border-radius: 10px 10px;
     color: #E5C685;
@@ -23,8 +23,59 @@ p.matches {
     background-color: rgba(211, 2, 8,0.9);
 }
 
+.time{
+    font-size: 0.8em;
+}
+
 p.today {
     text-align:  center;
     width: 100%;
     font-size: 20px;
+}
+
+.row.events div {
+    font-size: 11px;
+}
+
+.event-icon{
+    padding: 7px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    margin: 0px;
+}
+
+.event-player{
+    margin: 0px 3%;
+}
+
+.ball {
+    background-image: url('../../assets/ball.png');
+}
+
+.yellow-card {
+    background-image: url('../../assets/yellow.png');
+}
+
+.red-card {
+    background-image: url('../../assets/red.png');
+}
+
+.double-yellow-card {
+    background-image: url('../../assets/double-yellow.png');
+}
+
+.player-in{
+    background-image: url('../../assets/in.png');
+}
+
+.player-out{
+    background-image: url('../../assets/out.svg');
+}
+
+.own-goal{
+    background-image: url('../../assets/own.png');
+}
+
+.penalty{
+    background-image: url('../../assets/penalty.png');
 }
