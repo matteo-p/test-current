@@ -1,14 +1,14 @@
 <div class="container main">
   <div class="container-fluid">
-    <div class="row">
-      <p class="title">World cup 2018</p>
+    <div class="row title-row">
+      <p class="title">WORLD CUP RUSSIA 2018</p>
     <p class="today">Live scores - {{theDate}}</p>
     </div>
     <div class="row">
       <div class="col-sm-6" *ngFor="let data of matchesData; let i = index">
-        <p class="matches">{{data.home_team.country}}: {{data.home_team.goals}}   VS {{data.away_team.country}} : {{data.away_team.goals}} <br><span class="time">Time: {{data.time}}</span> </p>
-        <div class="col-1 float-left"></div>
-        <div class="col-5 float-left">
+        <p class="matches">{{data.home_team.country}}: {{data.home_team.goals}}   VS {{data.away_team.country}} : {{data.away_team.goals}} <br><span class="time" *ngIf ="data.status === 'in progress'">Time: {{data.time}} </span><span class="time" *ngIf ="data.status === 'future'">Kickoff At h {{data.datetime}}.00</span><span class="time" *ngIf ="data.status === 'completed'">Full time</span> </p>
+        <div class="col-sm-1 float-left"></div>
+        <div class="col-sm-5 float-left event-item">
           <div class="row events" *ngFor="let event of data.home_team_events">
             <div class="event-icon" [ngClass]="{
               'ball':event.type_of_event === 'goal',
@@ -25,7 +25,7 @@
           </div>
         </div>
 
-        <div class="col-5 float-left">
+        <div class="col-sm-5 float-left event-item">
           <div class="row events" *ngFor="let event of data.away_team_events">
             <div class="event-icon" [ngClass]="{
               'ball':event.type_of_event === 'goal',
@@ -42,7 +42,7 @@
             <div class="event-min">{{event.time}}</div>
           </div>
         </div>
-        <div class="col-1 float-left"></div>
+        <div class="col-sm-1 float-left"></div>
       </div>
     </div>
   </div>

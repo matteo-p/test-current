@@ -22,10 +22,14 @@ export class ResultAppComponent implements OnInit {
     fetch('https://worldcup.sfg.io/matches/today')
     .then(response => response.json())
     .then(data => {
-      // Here's a list of repos!
       console.log(data);
       this.theDate = (this.d.getDate() + ' / ' + this.d.getMonth() + ' / ' + this.d.getFullYear());
       this.matchesData = data;
+
+     Object.values(this.matchesData).forEach( (element) => {
+        element.datetime = new Date(element.datetime);
+        element.datetime = element.datetime.getHours();
+      });
     });
     this.update();
   }
@@ -35,9 +39,12 @@ export class ResultAppComponent implements OnInit {
       fetch('https://worldcup.sfg.io/matches/today')
     .then(response => response.json())
     .then(data => {
-      // Here's a list of repos!
       console.log(data);
       this.matchesData = data;
+      Object.values(this.matchesData).forEach( (element) => {
+        element.datetime = new Date(element.datetime);
+        element.datetime = element.datetime.getHours();
+      });
     });
     }, 60000);
   }

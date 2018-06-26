@@ -10,6 +10,7 @@ p.title {
     width:  100%;
     text-align:  center;
     font-size: 4rem;
+    text-shadow: -1px -1px 0 #a99e66, 1px -2px 0 #a99e66, -1px 2px 0 #a99e66, 2px -2px 0 #a99e66, 1px 2px 0 #a99e66;
 }
 
 p.matches {
@@ -78,4 +79,24 @@ p.today {
 
 .penalty{
     background-image: url('../../assets/penalty.png');
+}
+
+@media screen and (max-width: 500px){
+    .container.main, .container.main .container-fluid{
+        padding: 0px;
+    }
+
+    .row{
+        margin: auto;
+    }
+    
+    p.matches{
+        width: 97%;
+    }
+
+    .event-item{
+        margin: 0px 1%;
+        width: 48%;
+        padding: 0px;
+    }
 }
