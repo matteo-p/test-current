@@ -13,7 +13,7 @@
           <span class="time" *ngIf="data.status === 'completed'">Full time</span>
         </p>
         <p class="events-title" (click)="toggleEvents()" *ngIf="data.status != 'future'" >Match Events</p>
-        <div class="event-container">
+        <div class="event-container" [ngClass]="{'bottom-line':data.status != 'future'} ">
           
           <div class="col-sm-1 float-left"></div>
           <div class="col-sm-5 float-left event-item" [ngClass]="{'bottom-line':data.status != 'future'} ">

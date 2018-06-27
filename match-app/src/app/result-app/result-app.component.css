@@ -43,8 +43,13 @@ p.today {
     transition: 0.7s ease-in-out all;
 }
 
-.bottom-line{
-        border-bottom: 1px solid #aaa;
+.event-container.bottom-line{
+        border-bottom:  0px;
+
+}
+
+.event-item.bottom-line{
+    border-bottom:1px solid #aaa;
 
 }
 
@@ -135,6 +140,17 @@ p.today {
         width: 48%;
         padding: 0px;
     }
+
+    .event-container.bottom-line{
+        border-bottom: 1px solid #aaa;
+
+    }
+
+    .event-item.bottom-line{
+        border-bottom: 0px;
+
+    }
+
 }
 
 
