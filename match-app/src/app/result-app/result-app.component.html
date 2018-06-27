@@ -2,15 +2,23 @@
   <div class="container-fluid">
     <div class="row title-row">
       <p class="title">WORLD CUP RUSSIA 2018</p>
-    <p class="today">Live scores - {{theDate}}</p>
+      <p class="today">Live scores - {{theDate}}</p>
     </div>
     <div class="row">
       <div class="col-sm-6" *ngFor="let data of matchesData; let i = index">
-        <p class="matches">{{data.home_team.country}}: {{data.home_team.goals}}   VS {{data.away_team.country}} : {{data.away_team.goals}} <br><span class="time" *ngIf ="data.status === 'in progress'">Time: {{data.time}} </span><span class="time" *ngIf ="data.status === 'future'">Kickoff At h {{data.datetime}}.00</span><span class="time" *ngIf ="data.status === 'completed'">Full time</span> </p>
-        <div class="col-sm-1 float-left"></div>
-        <div class="col-sm-5 float-left event-item">
-          <div class="row events" *ngFor="let event of data.home_team_events">
-            <div class="event-icon" [ngClass]="{
+        <p class="matches">{{data.home_team.country}}: {{data.home_team.goals}} VS {{data.away_team.country}} : {{data.away_team.goals}}
+          <br>
+          <span class="time" *ngIf="data.status === 'in progress'">Time: {{data.time}} </span>
+          <span class="time" *ngIf="data.status === 'future'">Kickoff At h {{data.datetime}}.00</span>
+          <span class="time" *ngIf="data.status === 'completed'">Full time</span>
+        </p>
+        <p class="events-title" (click)="toggleEvents()" *ngIf="data.status != 'future'" >Match Events</p>
+        <div class="event-container">
+          
+          <div class="col-sm-1 float-left"></div>
+          <div class="col-sm-5 float-left event-item" [ngClass]="{'bottom-line':data.status != 'future'} ">
+            <div class="row events" *ngFor="let event of data.home_team_events">
+              <div class="event-icon" [ngClass]="{
               'ball':event.type_of_event === 'goal',
               'yellow-card':event.type_of_event === 'yellow-card',
               'red-card':event.type_of_event === 'red-card',
@@ -20,29 +28,30 @@
               'penalty':event.type_of_event === 'goal-penalty',
               'own-goal':event.type_of_event === 'goal-own'
             }"></div>
-            <div class="event-player">{{event.player}} </div>
-            <div class="event-min">{{event.time}}</div>
+              <div class="event-player">{{event.player}} </div>
+              <div class="event-min">{{event.time}}</div>
+            </div>
           </div>
+
+          <div class="col-sm-5 float-left event-item" [ngClass]="{'bottom-line':data.status != 'future'} ">
+            <div class="row events" *ngFor="let event of data.away_team_events">
+              <div class="event-icon" [ngClass]="{
+                'ball':event.type_of_event === 'goal',
+                'yellow-card':event.type_of_event === 'yellow-card',
+                'red-card':event.type_of_event === 'red-card',
+                'double-yellow-card':event.type_of_event === 'yellow-card-second',
+                'player-in':event.type_of_event === 'substitution-in',
+                'player-out':event.type_of_event === 'substitution-out',
+                'penalty':event.type_of_event === 'goal-penalty',
+                'own-goal':event.type_of_event === 'goal-own'
+              }"></div>
+              <div class="event-player">{{event.player}} </div>
+              <div class="event-min">{{event.time}}</div>
+            </div>
+          </div>
+          <div class="col-sm-1 float-left"></div>
         </div>
 
-        <div class="col-sm-5 float-left event-item">
-          <div class="row events" *ngFor="let event of data.away_team_events">
-            <div class="event-icon" [ngClass]="{
-              'ball':event.type_of_event === 'goal',
-              'yellow-card':event.type_of_event === 'yellow-card',
-              'red-card':event.type_of_event === 'red-card',
-              'double-yellow-card':event.type_of_event === 'yellow-card-second',
-              'player-in':event.type_of_event === 'substitution-in',
-              'player-out':event.type_of_event === 'substitution-out',
-              'penalty':event.type_of_event === 'goal-penalty',
-              'own-goal':event.type_of_event === 'goal-own'
-              
-            }"></div>
-            <div class="event-player">{{event.player}} </div>
-            <div class="event-min">{{event.time}}</div>
-          </div>
-        </div>
-        <div class="col-sm-1 float-left"></div>
       </div>
     </div>
   </div>

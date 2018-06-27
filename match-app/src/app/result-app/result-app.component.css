@@ -34,8 +34,40 @@ p.today {
     font-size: 20px;
 }
 
+.event-container {
+    display: flex;
+    overflow: hidden;
+    transition: 0.7s all ease;
+    max-height: 100%;
+    margin-bottom: 20px;
+    transition: 0.7s ease-in-out all;
+}
+
+.bottom-line{
+        border-bottom: 1px solid #aaa;
+
+}
+
+.events-title{
+    text-align: center;
+}
+
+
+.events-title::before{
+    content: 'Hide ';
+}
+
+.show-text::before{
+    content: 'Show ' !important;
+}
+
+
 .row.events div {
     font-size: 11px;
+}
+
+.event-item {
+    padding-bottom: 6px;
 }
 
 .event-icon{
@@ -81,7 +113,7 @@ p.today {
     background-image: url('../../assets/penalty.png');
 }
 
-@media screen and (max-width: 500px){
+@media screen and (max-width: 769px){
     .container.main, .container.main .container-fluid{
         padding: 0px;
     }
@@ -94,9 +126,18 @@ p.today {
         width: 97%;
     }
 
+    .event-container{
+        display: block;
+    }
+
     .event-item{
         margin: 0px 1%;
         width: 48%;
         padding: 0px;
     }
+}
+
+
+.he0 {
+    max-height: 0px !important;
 }

@@ -10,6 +10,7 @@ export class ResultAppComponent implements OnInit {
   d = new Date();
   theDate: string;
   matchesData: object;
+  elementClicked: any;
 
   constructor() { }
 
@@ -47,6 +48,12 @@ export class ResultAppComponent implements OnInit {
       });
     });
     }, 60000);
+  }
+
+  toggleEvents() {
+    this.elementClicked = event.currentTarget;
+    this.elementClicked.classList.toggle('show-text');
+    this.elementClicked.nextElementSibling.classList.toggle('he0');
   }
 
 
