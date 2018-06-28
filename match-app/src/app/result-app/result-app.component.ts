@@ -20,7 +20,7 @@ export class ResultAppComponent implements OnInit {
     }
 
   ngOnInit() {
-    fetch('https://worldcup.sfg.io/matches/today')
+    fetch('https://worldcup.sfg.io/matches')
     .then(response => response.json())
     .then(data => {
       console.log(data);
@@ -32,7 +32,7 @@ export class ResultAppComponent implements OnInit {
         element.datetime = element.datetime.getHours();
       });
     });
-    this.update();
+    // this.update();
   }
 
   update() {
@@ -53,6 +53,8 @@ export class ResultAppComponent implements OnInit {
   toggleEvents() {
     this.elementClicked = event.currentTarget;
     this.elementClicked.classList.toggle('show-text');
+    this.elementClicked = this.elementClicked.nextElementSibling;
+    this.elementClicked.classList.toggle('he0');
     this.elementClicked.nextElementSibling.classList.toggle('he0');
   }
 

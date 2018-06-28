@@ -12,9 +12,50 @@
           <span class="time" *ngIf="data.status === 'future'">Kickoff At h {{data.datetime}}.00</span>
           <span class="time" *ngIf="data.status === 'completed'">Full time</span>
         </p>
-        <p class="events-title" (click)="toggleEvents()" *ngIf="data.status != 'future'" >Match Events</p>
+        <p class="events-title" (click)="toggleEvents()" *ngIf="data.status != 'future'">Match Details</p>
         <div class="event-container">
-          
+          <div class="col-sm-1 float-left"></div>
+          <div class="col-sm-5 float-left event-item" [ngClass]="{'bottom-line':data.status != 'future'} ">
+            <div class="row events">
+              <div class="event-player">Shots </div>
+              <div class="event-min">{{data.home_team_statistics.attempts_on_goal}}</div>
+            </div>
+            <div class="row events">
+              <div class="event-player">Shots on Target </div>
+              <div class="event-min">{{data.home_team_statistics.on_target}}</div>
+            </div>
+            <div class="row events">
+              <div class="event-player">Ball Possession </div>
+              <div class="event-min">{{data.home_team_statistics.ball_possession}}%</div>
+            </div>
+            <div class="row events">
+              <div class="event-player">Pass Accuracy </div>
+              <div class="event-min">{{data.home_team_statistics.pass_accuracy}}%</div>
+            </div>
+          </div>
+
+          <div class="col-sm-5 float-left event-item" [ngClass]="{'bottom-line':data.status != 'future'} ">
+            <div class="row events">
+              <div class="event-player">Shots </div>
+              <div class="event-min">{{data.away_team_statistics.attempts_on_goal}}</div>
+            </div>
+            <div class="row events">
+              <div class="event-player">Shots on Target </div>
+              <div class="event-min">{{data.away_team_statistics.on_target}}</div>
+            </div>
+            <div class="row events">
+              <div class="event-player">Ball Possession </div>
+              <div class="event-min">{{data.away_team_statistics.ball_possession}}%</div>
+            </div>
+            <div class="row events">
+              <div class="event-player">Pass Accuracy </div>
+              <div class="event-min">{{data.away_team_statistics.pass_accuracy}}%</div>
+            </div>
+          </div>
+          <div class="col-sm-1 float-left"></div>
+        </div>
+        <div class="event-container">
+
           <div class="col-sm-1 float-left"></div>
           <div class="col-sm-5 float-left event-item" [ngClass]="{'bottom-line':data.status != 'future'} ">
             <div class="row events" *ngFor="let event of data.home_team_events">
@@ -51,6 +92,8 @@
           </div>
           <div class="col-sm-1 float-left"></div>
         </div>
+
+
 
       </div>
     </div>
