@@ -1,12 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-result-app',
-  templateUrl: './result-app.component.html',
-  styleUrls: ['./result-app.component.css']
+  selector: 'app-all',
+  templateUrl: './all.component.html',
+  styleUrls: ['./all.component.css']
 })
-export class ResultAppComponent implements OnInit {
-
+export class AllComponent implements OnInit {
   d = new Date();
   theDate: string;
   matchesData: object;
@@ -14,13 +13,8 @@ export class ResultAppComponent implements OnInit {
 
   constructor() { }
 
-  public sampleMethodCall() {
-    setInterval(function() {
-      this.ngOnInit(); }, 4000);
-    }
-
   ngOnInit() {
-    fetch('https://worldcup.sfg.io/matches/today')
+    fetch('https://worldcup.sfg.io/matches/')
     .then(response => response.json())
     .then(data => {
       console.log(data);
@@ -32,12 +26,12 @@ export class ResultAppComponent implements OnInit {
         element.datetime = element.datetime.getHours();
       });
     });
-    this.update();
+    // this.update();
   }
 
   update() {
     setInterval(() => {
-      fetch('https://worldcup.sfg.io/matches/today')
+      fetch('https://worldcup.sfg.io/matches/')
     .then(response => response.json())
     .then(data => {
       console.log(data);
@@ -57,6 +51,5 @@ export class ResultAppComponent implements OnInit {
     this.elementClicked.classList.toggle('he0');
     this.elementClicked.nextElementSibling.classList.toggle('he0');
   }
-
 
 }
