@@ -1,0 +1,10 @@
+.navbar {
+    background-color: #01427e !important;
+    border-bottom: 1px solid #be0a16;
+}
+
+li.nav-item.active {}
+
+li.nav-item:hover {
+    box-shadow: 3px 3px 9px -3px;
+}
