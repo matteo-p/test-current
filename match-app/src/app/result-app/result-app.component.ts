@@ -14,10 +14,6 @@ export class ResultAppComponent implements OnInit {
 
   constructor() { }
 
-  public sampleMethodCall() {
-    setInterval(function() {
-      this.ngOnInit(); }, 4000);
-    }
 
   ngOnInit() {
     fetch('https://worldcup.sfg.io/matches/today')
