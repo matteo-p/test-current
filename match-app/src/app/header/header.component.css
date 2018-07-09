@@ -1,0 +1,12 @@
+.navbar{
+    border-bottom: 1px solid rgba(211, 2, 8,0.9);
+    background-color: #00508f !important;
+}
+
+li.nav-item:hover {
+    box-shadow: 2px 4px 12px -3px;
+}
+
+li.nav-item {
+    transition: 0.3s all ease;
+}
