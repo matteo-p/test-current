@@ -6,12 +6,17 @@
     src: url('assets/Dusha_-_FIFA_World_Cup_2018.ttf');
 }
 
+body {
+    background-color: #043172;
+}
+
 .background{
     background: url(/assets/WorldCupBackground.jpg);
     top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    position: fixed;
+    height: 100%;
+    width: 100%;
+   left: 0;
+   position: fixed;
     z-index: -1;
+    background-size: auto 100%;
 }
