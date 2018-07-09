@@ -1,24 +1,11 @@
-<<<<<<< HEAD
-.navbar{
-    border-bottom: 1px solid rgba(211, 2, 8,0.9);
-    background-color: #00508f !important;
-}
-
-li.nav-item:hover {
-    box-shadow: 2px 4px 12px -3px;
-}
-
-li.nav-item {
-    transition: 0.3s all ease;
-=======
 .navbar {
     background-color: #01427e !important;
     border-bottom: 1px solid #be0a16;
 }
 
-li.nav-item.active {}
-
+li.nav-item {
+    
+    transition: 0.3s all ease;}
 li.nav-item:hover {
     box-shadow: 3px 3px 9px -3px;
->>>>>>> 2410b98a3fe528eadf3aede1e7883226d95a60a9
 }
