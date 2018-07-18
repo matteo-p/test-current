@@ -16,11 +16,12 @@ export class ResultAppComponent implements OnInit {
 
 
   ngOnInit() {
-    fetch('https://worldcup.sfg.io/matches/today')
+/*     fetch('https://worldcup.sfg.io/matches/today')
+ */    fetch('../../assets/scores.json')
     .then(response => response.json())
     .then(data => {
       console.log(data);
-      this.theDate = (this.d.getDate() + ' / ' + this.d.getMonth() + ' / ' + this.d.getFullYear());
+      this.theDate = (this.d.getDate() + ' / ' + (this.d.getMonth() + 1 ) + ' / ' + this.d.getFullYear());
       this.matchesData = data;
 
      Object.values(this.matchesData).forEach( (element) => {
@@ -28,8 +29,8 @@ export class ResultAppComponent implements OnInit {
         element.datetime = element.datetime.getHours();
       });
     });
-    this.update();
-  }
+/*     this.update();
+ */  }
 
  /*  ngOnInit() {
     fetch('../../assets/scores.json')
