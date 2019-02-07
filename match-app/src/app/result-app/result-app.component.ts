@@ -17,7 +17,7 @@ export class ResultAppComponent implements OnInit {
 
   ngOnInit() {
 /*     fetch('https://worldcup.sfg.io/matches/today')
- */    fetch('../../assets/scores.json')
+ */    fetch('http://www.parisimatteo.it/wc18scores/demoscores/scores.json')
     .then(response => response.json())
     .then(data => {
       console.log(data);
